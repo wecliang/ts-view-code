@@ -6,6 +6,7 @@ declare module '*.svg' {
 declare var w7;
 // 动态全局配置
 declare var publicConfig;
+declare var ReactRouterDom;
 
 declare module '*.less' {
   const classes: { [className: string]: string };

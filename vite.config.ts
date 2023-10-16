@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgrPlugin from '@arco-plugins/vite-plugin-svgr';
 import vitePluginForArco from '@arco-plugins/vite-react';
+import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 import setting from './src/settings.json';
 import { viteExternalsPlugin } from 'vite-plugin-externals';
 import vitePluginRequire from 'vite-plugin-require';
@@ -21,6 +22,9 @@ export default defineConfig({
     viteExternalsPlugin({
       react: 'React',
       'react-dom': 'ReactDOM',
+      'react-router-dom': "ReactRouterDOM",
+      'react-dnd': "ReactDnD",
+      'react-dnd-html5-backend': "ReactDnDHTML5Backend",
       // '@arco-design/web-react': 'arco',
       // '@arco-design/web-react/icon': "arcoicon",
     }),
@@ -52,6 +56,11 @@ export default defineConfig({
         'arcoblue-6': setting.themeColor,
       },
     }),
+    monacoEditorPlugin({ 
+      customDistPath: (root: string, buildOutDir: string) => {
+        return `${root}/${buildOutDir}/monacoeditorwork`;
+      },
+    }),
   ],
   css: {
     preprocessorOptions: {
@@ -64,6 +73,11 @@ export default defineConfig({
     port: 3098,
     https: true,
     proxy: {
+      '/wizapi': {
+        // target: 'http://api-d.tinvapi.com/',
+        target: 'http://127.0.0.1:9000',
+        changeOrigin: true
+      },
     }
   },
 });

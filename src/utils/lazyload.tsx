@@ -1,6 +1,6 @@
 import React from 'react';
 import loadable from '@loadable/component';
-import Spin from '@arco-design/web-react/lib/Spin';
+import { Spin } from '@arco-design/web-react';
 
 // https://github.com/gregberge/loadable-components/pull/226
 function load(fn, options) {
