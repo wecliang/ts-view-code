@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 // import zhCN from '@arco-design/web-react/es/locale/zh-CN';
 // import enUS from '@arco-design/web-react/es/locale/en-US';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { GlobalContext } from './context';
@@ -30,7 +30,7 @@ function Index() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-    <BrowserRouter basename="/ts-view-code">
+    <HashRouter basename="/">
       <GlobalContext.Provider value={contextValue}>
         <Switch>
           <Route path="/home" component={lazyload(() => import('@/pages/home'))} />
@@ -38,7 +38,7 @@ function Index() {
           <Redirect to="/home" />
         </Switch>
       </GlobalContext.Provider>
-    </BrowserRouter>
+    </HashRouter>
     </DndProvider>
   );
 }
