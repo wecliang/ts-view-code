@@ -30,7 +30,7 @@ function Index() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-    <BrowserRouter>
+    <BrowserRouter basename="/ts-view-code">
       <GlobalContext.Provider value={contextValue}>
         <Switch>
           <Route path="/home" component={lazyload(() => import('@/pages/home'))} />
