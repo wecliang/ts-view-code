@@ -17,6 +17,7 @@ export default defineConfig({
       { find: '@', replacement: '/src' }
     ],
   },
+  base: "/ts-view-code",
   plugins: [
     vitePluginRequire({}),
     viteExternalsPlugin({
