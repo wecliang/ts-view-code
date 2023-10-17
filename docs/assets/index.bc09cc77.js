@@ -1,1 +1,0 @@
-import{i}from"./index.a47e87b2.js";import{j as e}from"./vendor.0b417fb8.js";var t=()=>e("div",{style:{height:"100vh",position:"relative",display:"flex",flexDirection:"column"},children:e(i,{})});export{t as default};
