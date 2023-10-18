@@ -1,0 +1,1 @@
+import{W as i}from"./index.6bb982ac.js";import{j as e}from"./vendor.0b417fb8.js";var n=()=>e("div",{style:{minHeight:"100vh",position:"relative",display:"flex",flexDirection:"column"},children:e(i,{pageId:"325ce6da-21b3-4d9a-8205-1932c05bc0ea"})});export{n as default};
